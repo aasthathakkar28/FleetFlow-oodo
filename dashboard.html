@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FleetFlow | Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">FleetFlow</h2>
+    <ul class="menu">
+      <li class="active">Dashboard</li>
+      <li onclick="go('vehicle-registry.html')">Vehicle Registry</li>
+      <li onclick="go('trip-dispatcher.html')">Trip Dispatcher</li>
+      <li onclick="go('maintenance.html')">Maintenance</li>
+      <li onclick="go('expense.html')">Trip & Expense</li>
+      <li onclick="go('driver-performance.html')">Performance</li>
+      <li onclick="go('analytics.html')">Analytics</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <input id="search" placeholder="Search vehicle / driver..." onkeyup="renderTable()">
+
+      <select id="filterStatus" onchange="renderTable()">
+        <option value="">Filter Status</option>
+        <option>Available</option>
+        <option>On Trip</option>
+        <option>In Shop</option>
+      </select>
+
+      <select id="sortBy" onchange="renderTable()">
+        <option value="">Sort By</option>
+        <option value="vehicle">Vehicle</option>
+        <option value="driver">Driver</option>
+      </select>
+
+      <button onclick="go('trip-dispatcher.html')">New Trip</button>
+      <button onclick="go('vehicle-registry.html')">New Vehicle</button>
+    </div>
+
+    <!-- KPI -->
+    <div class="kpi">
+      <div class="card">
+        <p>Active Fleet</p>
+        <h1 id="activeCount">0</h1>
+      </div>
+      <div class="card">
+        <p>Maintenance Alert</p>
+        <h1 id="maintCount">0</h1>
+      </div>
+      <div class="card">
+        <p>Pending Cargo</p>
+        <h1 id="pendingCount">0</h1>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-box">
+      <h3>Ongoing Trips</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Trip</th>
+            <th>Vehicle</th>
+            <th>Driver</th>
+            <th>Status</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
