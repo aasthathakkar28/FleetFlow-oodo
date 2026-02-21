@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FleetFlow | Expense & Fuel Logging</title>
+  <link rel="stylesheet" href="css/expense.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h2>FleetFlow</h2>
+
+    <div class="controls">
+      <input id="search" placeholder="Search bar....." onkeyup="renderExpenses()">
+
+      <select id="filterBy" onchange="renderExpenses()">
+        <option value="">Filter</option>
+        <option value="Done">Done</option>
+        <option value="Pending">Pending</option>
+      </select>
+
+      <select id="sortBy" onchange="renderExpenses()">
+        <option value="">Sort by</option>
+        <option value="tripId">Trip ID</option>
+        <option value="driver">Driver</option>
+      </select>
+
+      <button class="primary" onclick="openModal()">Add an Expense</button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Trip ID</th>
+          <th>Driver</th>
+          <th>Distance</th>
+          <th>Fuel Expense</th>
+          <th>Misc. Expense</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="expenseTable"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="expenseModal">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h3>New Expense</h3>
+      <span onclick="closeModal()">✖</span>
+    </div>
+
+    <form id="expenseForm">
+
+      <div class="field">
+        <label>Trip ID</label>
+        <input id="tripId" required>
+      </div>
+
+      <div class="field">
+        <label>Driver</label>
+        <input id="driver" required>
+      </div>
+
+      <div class="field">
+        <label>Distance (km)</label>
+        <input id="distance" required>
+      </div>
+
+      <div class="field">
+        <label>Fuel Cost</label>
+        <input id="fuel" required>
+      </div>
+
+      <div class="field">
+        <label>Misc Expense</label>
+        <input id="misc" required>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="save">Create</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script src="js/expense.js"></script>
+</body>
+</html>
