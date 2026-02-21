@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FleetFlow | Trip Dispatcher</title>
+  <link rel="stylesheet" href="css/trip-dispatcher.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h2>FleetFlow</h2>
+
+    <div class="controls">
+      <input id="search" placeholder="Search bar....." onkeyup="renderTrips()">
+
+      <select id="groupBy" onchange="renderTrips()">
+        <option value="">Group by</option>
+        <option value="type">Fleet Type</option>
+        <option value="status">Status</option>
+      </select>
+
+      <select id="filterBy" onchange="renderTrips()">
+        <option value="">Filter</option>
+        <option value="On Way">On Way</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <select id="sortBy" onchange="renderTrips()">
+        <option value="">Sort by</option>
+        <option value="origin">Origin</option>
+        <option value="destination">Destination</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- TRIP TABLE -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Trip</th>
+          <th>Fleet Type</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Driver</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tripTable"></tbody>
+    </table>
+  </div>
+
+  <!-- NEW TRIP FORM -->
+  <div class="form-card">
+    <h3>New Trip Form</h3>
+
+    <div class="form">
+      <input id="vehicle" placeholder="Select Vehicle">
+      <input id="weight" placeholder="Cargo Weight (Kg)">
+      <input id="driver" placeholder="Select Driver">
+      <input id="origin" placeholder="Origin Address">
+      <input id="destination" placeholder="Destination">
+      <input id="fuel" placeholder="Estimated Fuel Cost">
+
+      <button onclick="addTrip()">Confirm & Dispatch Trip</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/trip-dispatcher.js"></script>
+</body>
+</html>
