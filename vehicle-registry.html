@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FleetFlow | Vehicle Registry</title>
+  <link rel="stylesheet" href="css/vehicle-registry.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h2>FleetFlow</h2>
+
+    <div class="top-actions">
+      <input id="search" placeholder="Search bar....." onkeyup="renderTable()">
+
+      <select id="filterStatus" onchange="renderTable()">
+        <option value="">Filter</option>
+        <option value="Idle">Idle</option>
+        <option value="On Trip">On Trip</option>
+      </select>
+
+      <select id="sortBy" onchange="renderTable()">
+        <option value="">Sort by</option>
+        <option value="model">Model</option>
+        <option value="type">Type</option>
+      </select>
+
+      <button class="primary" onclick="openModal()">+ New Vehicle</button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TABLE -->
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Plate</th>
+            <th>Model</th>
+            <th>Type</th>
+            <th>Capacity</th>
+            <th>Odometer</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="vehicleTable"></tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="vehicleModal">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h3>New Vehicle Registration</h3>
+      <span onclick="closeModal()">✖</span>
+    </div>
+
+    <form id="vehicleForm">
+
+      <div class="field">
+        <label>License Plate</label>
+        <input id="plate" required>
+      </div>
+
+      <div class="field">
+        <label>Max Payload</label>
+        <input id="capacity" required>
+      </div>
+
+      <div class="field">
+        <label>Initial Odometer</label>
+        <input id="odometer" type="number" required>
+      </div>
+
+      <div class="field">
+        <label>Type</label>
+        <input id="type" required>
+      </div>
+
+      <div class="field">
+        <label>Model</label>
+        <input id="model" required>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="save">Save</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script src="js/vehicle-registry.js"></script>
+</body>
+</html>
