@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FleetFlow | Maintenance & Service Logs</title>
+  <link rel="stylesheet" href="css/maintenance.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <h2>FleetFlow</h2>
+
+    <div class="controls">
+      <input id="search" placeholder="Search bar....." onkeyup="renderLogs()">
+
+      <select id="filterBy" onchange="renderLogs()">
+        <option value="">Filter</option>
+        <option value="New">New</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <select id="sortBy" onchange="renderLogs()">
+        <option value="">Sort by</option>
+        <option value="date">Date</option>
+        <option value="vehicle">Vehicle</option>
+      </select>
+
+      <button class="primary" onclick="openModal()">Create New Service</button>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Log ID</th>
+          <th>Vehicle</th>
+          <th>Issue / Service</th>
+          <th>Date</th>
+          <th>Cost</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="logTable"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="serviceModal">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h3>New Service</h3>
+      <span onclick="closeModal()">✖</span>
+    </div>
+
+    <form id="serviceForm">
+
+      <div class="field">
+        <label>Vehicle Name</label>
+        <input id="vehicle" required>
+      </div>
+
+      <div class="field">
+        <label>Issue / Service</label>
+        <input id="issue" required>
+      </div>
+
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="field">
+        <label>Cost</label>
+        <input id="cost" placeholder="e.g. 10k" required>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+        <button type="submit" class="save">Create</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script src="js/maintenance.js"></script>
+</body>
+</html>
