@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FleetFlow | Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <!-- Top Accent Line -->
+      <div class="accent-line"></div>
+
+      <!-- Title -->
+      <h1 class="brand">FleetFlow</h1>
+      <p class="subtitle">Sign in to your account</p>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+
+        <!-- Employee ID / Email -->
+        <div class="input-group">
+          <label>Employee ID / Email</label>
+          <input type="text" id="email" placeholder="e.g. FF2024001" required>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="••••••••" required>
+        </div>
+
+        <!-- Role -->
+        <div class="input-group">
+          <label>Role</label>
+          <select id="role" required>
+            <option value="">Select Role</option>
+            <option value="manager">Manager</option>
+            <option value="dispatcher">Dispatcher</option>
+          </select>
+        </div>
+
+        <!-- Button -->
+        <button type="submit" class="login-btn">
+          Sign In →
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
