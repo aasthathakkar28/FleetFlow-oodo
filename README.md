@@ -1,4 +1,5 @@
 # FleetFlow-odoo
+Video link : https://drive.google.com/file/d/1YRhJdvkVfFfhbPxMtVNSr3JCRpGuptFl/view?usp=sharing
 # 🚚 FleetFlow
 
 **FleetFlow** is a modular, rule-driven **Fleet & Logistics Management System** built to digitize and optimize end-to-end fleet operations. It replaces fragmented manual processes with a centralized command platform that ensures **operational efficiency, compliance enforcement, and data-driven decision-making**.
@@ -183,6 +184,6 @@ fleetflow/
 
 ## 👨‍💻 Author
 
-**Yash Suba**
-  Aastha Thakkar
-  Palak Patel
+**Yash Suba**   
+    Aastha Thakkar
+    Palak Patel
